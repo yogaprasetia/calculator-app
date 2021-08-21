@@ -39,10 +39,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 edtLength.error = "Field ini tidak boleh kosong"
             }
 
-            
+            if (inputWidth.isEmpty()) {
+                isEmptyFields = true
+                edtWidth.error = "Field ini tidak boleh kosong"
+            }
 
-            val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
-            tvResult.text = volume.toString()
+            if (inputHeight.isEmpty()) {
+                isEmptyFields = true
+                edtHeight.error = "Field ini tidak boleh kosong"
+            }
+
+            if (!isEmptyFields) {
+                val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
+                tvResult.text = volume.toString()
+                tvResult.text = volume.toString()
+            }
         }
     }
 }
